@@ -42,3 +42,7 @@ If your network isn’t learning (meaning: the loss/accuracy is not converging d
 - Check your reshaping. Drastic reshaping (like changing an image’s X,Y dimensions) can destroy spatial locality, making it harder for a network to learn since it must also learn the reshape. (Natural features become fragmented. The fact that natural features appear spatially local is why conv nets are so effective!) Be especially careful if reshaping with multiple images/channels; use numpy.stack() for proper alignment.
 - Scrutinize your loss function. If using a complex function, try simplifying it to something like L1 or L2. We’ve found L1 to be less sensitive to outliers, making less drastic adjustments when hitting a noisy batch or training point.
 - Scrutinize your visualizations, if applicable. Is your viz library (matplotlib, OpenCV, etc.) adjusting the scale of the values, or clipping them? Consider using a perceptually-uniform color scheme as well.
+
+### More on debugging
+- https://medium.com/@keeper6928/how-to-unit-test-machine-learning-code-57cf6fd81765
+- https://stats.stackexchange.com/questions/352036/what-should-i-do-when-my-neural-network-doesnt-learn
